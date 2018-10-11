@@ -10,14 +10,14 @@ spec:
         app: helloworld
     spec:
       containers:
-      - name: k8s-demo
-        image: amitvashist7/k8s-tiny-web
+      - name: okd-demo
+        image: amitvashist7/hello-openshift:latest
         ports:
-        - name: nodejs-port
-          containerPort: 80
+        - name: node-port
+          containerPort: 8080
         livenessProbe:
           httpGet:
             path: /
-            port: nodejs-port
+            port: node-port
           initialDelaySeconds: 15
           timeoutSeconds: 30

@@ -10,11 +10,11 @@ spec:
         app: helloworld-1
     spec:
       containers:
-      - name: k8s-demo
-        image: amitvashist7/k8s-tiny-web
+      - name: okd-demo
+        image: amitvashist7/hello-openshift:v3
         ports:
         - name: nodejs-port
-          containerPort: 80
+          containerPort: 8080
       nodeSelector:
         hardware: virtual
         env: prod
