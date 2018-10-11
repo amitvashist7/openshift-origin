@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: helloworld-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: okd-demo
+        image: amitvashist7/hello-openshift:latest
+        ports:
+        - name: node-port
+          containerPort: 8080
